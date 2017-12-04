@@ -34,13 +34,20 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 100.0
     }
 }
 
 class MyCell : UITableViewCell {
     
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        containerView.layer.cornerRadius = 10
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
